@@ -1,10 +1,10 @@
 @echo off
-rem Tworzenie folderu 'bin', jeśli nie istnieje
+rem Tworzenie folderu 'bin', jesli nie istnieje
 if not exist bin (
     mkdir bin
 )
 
-rem Tworzenie listy plików .c
+rem Tworzenie listy plikow .c
 setlocal EnableDelayedExpansion
 set "sources="
 for %%f in (src\*.c) do (
@@ -16,18 +16,18 @@ rem Kompilacja programu
 gcc -Wall --pedantic %sources% -o bin\gauss
 
 if %ERRORLEVEL% neq 0 (
-    echo Kompilacja nie powiodła się.
+    echo Kompilacja nie powiodla sie.
     exit /b %ERRORLEVEL%
 )
 
-echo Kompilacja zakończona sukcesem.
+echo Kompilacja zakonczona sukcesem.
 
 rem Uruchamianie programu z argumentami
 bin\gauss dane\A dane\b
 
 if %ERRORLEVEL% neq 0 (
-    echo Wystąpił błąd podczas uruchamiania programu.
+    echo Wystapil blad podczas uruchamiania programu.
     exit /b %ERRORLEVEL%
 )
 
-echo Program zakończył działanie.
+echo Program zakonczyl dzialanie.
