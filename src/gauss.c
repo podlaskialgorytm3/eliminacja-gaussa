@@ -11,7 +11,27 @@ int eliminate(MatrixPtr A, MatrixPtr b)
 
 	for (int k = 0; k < n; k++)
 	{
-		
+		int max_row = k;
+		for (int i = k + 1; i < n; i++)
+		{
+			if (A->data[i][k] > A->data[max_row][k])
+			{
+				max_row = i;
+			}
+		}
+
+		if (max_row != k)
+		{
+			for (int j = k; j < n; j++)
+			{
+				double temp = A->data[k][j];
+				A->data[k][j] = A->data[max_row][j];
+				A->data[max_row][j] = temp;
+			}
+			double temp = b->data[k][0];
+			b->data[k][0] = b->data[max_row][0];
+			b->data[max_row][0] = temp;
+		}
 
 		for (int i = k + 1; i < n; i++)
 		{
