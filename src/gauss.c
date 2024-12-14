@@ -9,7 +9,7 @@ int eliminate(MatrixPtr A, MatrixPtr b)
 {
 	int n = A->r;
 
-	if(A->r != b->r)
+	if (A->r != b->r)
 	{
 		return 2;
 	}
