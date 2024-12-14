@@ -9,6 +9,11 @@ int eliminate(MatrixPtr A, MatrixPtr b)
 {
 	int n = A->r;
 
+	if(A->r != b->r)
+	{
+		return 2;
+	}
+
 	for (int k = 0; k < n; k++)
 	{
 		int max_row = k;
