@@ -8,6 +8,6 @@
  * Zwraca 1 - błąd dzielenia przez 0 (element na diagonali = 0)
  * Zwraca 2 - błąd nieprawidłowych rozmiarów macierzy
  */
-int backsubst(MatrixPtr x, MatrixPtr mat, MatrixPtr b);
+int backsubst(MatrixPtr x, MatrixPtr A, MatrixPtr b);
 
 #endif
