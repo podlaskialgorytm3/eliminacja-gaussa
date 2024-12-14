@@ -4,6 +4,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void checkCorrectly(int res)
+{
+    if (res == 1)
+    {
+        printf("Wykonano operacje dzielenia przez 0!");
+        exit(1);
+    }
+    else if (res == 2)
+    {
+        printf("Nieprawidlowy rozmiar macierzy!");
+        exit(1);
+    }
+}
+
 int main(int argc, char **argv)
 {
 	int res;
@@ -19,10 +33,13 @@ int main(int argc, char **argv)
 	printToScreen(b);
 
 	res = eliminate(A, b);
+	checkCorrectly(res);
+
 	x = createMatrix(b->r, 1);
 	if (x != NULL)
 	{
 		res = backsubst(x, A, b);
+		checkCorrectly(res);
 
 		printToScreen(x);
 		freeMatrix(x);
