@@ -6,12 +6,12 @@
  * Zwraca <> NULL - udalo sie wczytac
  * Zwraca == NULL - podczas wczytywania wystapil blad
  */
-Matrix *readFromFile(char *fname)
+MatrixPtr readFromFile(char *fname)
 {
 	int r, c;
 	int ir, ic;
 	FILE *fin = fopen(fname, "r");
-	Matrix *mat = NULL;
+	MatrixPtr mat = NULL;
 
 	if (fin != NULL)
 	{
@@ -38,7 +38,7 @@ Matrix *readFromFile(char *fname)
 	return mat;
 }
 
-void printToScreen(Matrix *mat)
+void printToScreen(MatrixPtr mat)
 {
 	int i, j;
 	printf("[ \n");
@@ -54,10 +54,10 @@ void printToScreen(Matrix *mat)
 	printf("]\n");
 }
 
-Matrix *createMatrix(int r, int c)
+MatrixPtr createMatrix(int r, int c)
 {
 	int i;
-	Matrix *mat = (Matrix *)malloc(sizeof(Matrix));
+	MatrixPtr mat = (MatrixPtr)malloc(sizeof(Matrix));
 	if (mat != NULL)
 	{
 		mat->r = r;
@@ -72,7 +72,7 @@ Matrix *createMatrix(int r, int c)
 	return mat;
 }
 
-void freeMatrix(Matrix *mat)
+void freeMatrix(MatrixPtr mat)
 {
 	int i;
 	for (i = 0; i < mat->r; i++)
