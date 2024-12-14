@@ -6,16 +6,16 @@
 
 void checkCorrectly(int res)
 {
-    if (res == 1)
-    {
-        printf("Wykonano operacje dzielenia przez 0!");
-        exit(1);
-    }
-    else if (res == 2)
-    {
-        printf("Nieprawidlowy rozmiar macierzy!");
-        exit(1);
-    }
+	if (res == 1)
+	{
+		printf("Wykonano operacje dzielenia przez 0!");
+		exit(1);
+	}
+	else if (res == 2)
+	{
+		printf("Nieprawidlowy rozmiar macierzy!");
+		exit(1);
+	}
 }
 
 int main(int argc, char **argv)
