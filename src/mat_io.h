@@ -12,9 +12,9 @@ typedef struct _Matrix
  * Zwraca 1 - podczas wczytywania wystapil blad
  */
 Matrix *readFromFile(char *fname);
-void printToScreen(Matrix *mat);
+void printToScreen(MatrixPtr mat);
 
 Matrix *createMatrix(int r, int c);
-void freeMatrix(Matrix *mat);
+void freeMatrix(MatrixPtr mat);
 
 #endif
